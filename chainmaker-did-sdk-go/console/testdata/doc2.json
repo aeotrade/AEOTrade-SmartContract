@@ -1,0 +1,28 @@
+{
+    "@context": "https://www.w3.org/ns/did/v1",
+    "id": "did:cm:Hyi8uUrBPhsH2i1sd1zaZGYeQA9WdxGgiAu8YPgY8pxe",
+    "created": "2024-03-08T16:42:30+08:00",
+    "updated": "2024-03-08T16:42:30+08:00",
+    "verificationMethod": [
+        {
+            "id": "did:cm:Hyi8uUrBPhsH2i1sd1zaZGYeQA9WdxGgiAu8YPgY8pxe#keys-0",
+            "type": "ECDSA-SHA256",
+            "controller": "did:cm:Hyi8uUrBPhsH2i1sd1zaZGYeQA9WdxGgiAu8YPgY8pxe",
+            "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMFYwEAYHKoZIzj0CAQYFK4EEAAoDQgAEk8LPsj8/8OF1/P5E885/taW9Z5briwXI\n+adAsK8bVluJGFZSK/TOoLklAhTgxGj1TBKRh0TSayUTBwC+oH0gdw==\n-----END PUBLIC KEY-----\n",
+            "address": "2fc542c747a1a26b977c5b1fb824e070cb41b181"
+        }
+    ],
+    "authentication": [
+        "did:cm:Hyi8uUrBPhsH2i1sd1zaZGYeQA9WdxGgiAu8YPgY8pxe#keys-0"
+    ],
+    "controller": [
+        "did:cm:Hyi8uUrBPhsH2i1sd1zaZGYeQA9WdxGgiAu8YPgY8pxe"
+    ],
+    "proof": {
+        "type": "ECDSA-SHA256",
+        "created": "2024-03-08T16:42:30+08:00",
+        "proofPurpose": "assertionMethod",
+        "verificationMethod": "did:cm:Hyi8uUrBPhsH2i1sd1zaZGYeQA9WdxGgiAu8YPgY8pxe#keys-0",
+        "proofValue": "MEYCIQDU/qVbPIT6yumUuIH4L2Fvxu/ZAfuGdD6Jb8DtomgIdgIhALW6lnslC0d1NW+9WEn5ffDz5DR4P5KJonnM9J7nclg8"
+    }
+}

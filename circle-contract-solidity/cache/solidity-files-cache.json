@@ -1,0 +1,77 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/Users/li/workspace/open/AEOTrade-SmartContract/circle-contract-solidity/contracts/Circle.sol": {
+      "lastModificationDate": 1750757126787,
+      "contentHash": "cd2450821d5171ebf2158b45af5aad9e",
+      "sourceName": "contracts/Circle.sol",
+      "solcConfig": {
+        "version": "0.8.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./CircleStructs.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.6"
+      ],
+      "artifacts": [
+        "CircleContract"
+      ]
+    },
+    "/Users/li/workspace/open/AEOTrade-SmartContract/circle-contract-solidity/contracts/CircleStructs.sol": {
+      "lastModificationDate": 1750757126793,
+      "contentHash": "b6db478afbbb846179df86aedf54c68c",
+      "sourceName": "contracts/CircleStructs.sol",
+      "solcConfig": {
+        "version": "0.8.6",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.6"
+      ],
+      "artifacts": [
+        "CircleStructs"
+      ]
+    }
+  }
+}

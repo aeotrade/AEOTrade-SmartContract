@@ -1,0 +1,186 @@
+auth_type: public
+log:
+  config_file: ../config/node5/log.yml
+crypto_engine: tjfoc
+blockchain:
+- chainId: pk1
+  genesis: ../config/node5/chainconfig/bc1.yml
+node:
+  priv_key_file: ../config/node5/node5.key
+  cert_cache_size: 1000
+  pkcs11: null
+  fast_sync:
+    enabled: true
+    min_full_blocks: 0
+net:
+  provider: LibP2P
+  listen_addr: /ip4/0.0.0.0/tcp/11301
+  seeds:
+  - /ip4/127.0.0.1/tcp/11301/p2p/QmUbBvoJ7LUmTsPCJvJtEnXjLyNtWPoQ8E3HcYdHT2zL5d
+  - /ip4/127.0.0.1/tcp/11302/p2p/QmSxtqgqYtZWsrcPyTvvkBG9MU3JDV8TuX9dVmRYmGn5nM
+  - /ip4/127.0.0.1/tcp/11303/p2p/QmbDQAugHgt2sDtQ8p4dmyCG7Vf2ocMsC9Av9pUAgQXrHF
+  - /ip4/127.0.0.1/tcp/11304/p2p/QmcD8tkDrdtKuJaKZpmNJonkHFE6b8uS6oDAjQv9hdx249
+  tls:
+    enabled: true
+    priv_key_file: ../config/node5/node5.key
+    cert_file: ""
+txpool:
+  pool_type: normal
+  max_txpool_size: 50000
+  max_config_txpool_size: 10
+  is_dump_txs_in_queue: true
+  common_queue_num: 8
+  batch_max_size: 100
+  batch_create_timeout: 50
+rpc:
+  provider: grpc
+  port: 12301
+  check_chain_conf_trust_roots_change_interval: 60
+  ratelimit:
+    enabled: false
+    type: 0
+    token_per_second: -1
+    token_bucket_size: -1
+  subscriber:
+    ratelimit:
+      enabled: false
+      type: 0
+      token_per_second: 100
+      token_bucket_size: 100
+  tls:
+    mode: disable
+    priv_key_file: ""
+    cert_file: ""
+  max_send_msg_size: 100
+  max_recv_msg_size: 100
+  gateway:
+    enabled: false
+    max_resp_body_size: 16
+tx_filter:
+  type: 0
+  birds_nest:
+    length: 10
+    rules:
+      absolute_expire_time: 172800
+    cuckoo:
+      key_type: 1
+      tags_per_bucket: 2
+      bits_per_item: 11
+      max_num_keys: 2000000
+      table_type: 0
+    snapshot:
+      type: 0
+      timed:
+        interval: 10
+      block_height:
+        interval: 10
+      serialize_interval: 10
+      path: ../data/node5/tx_filter
+  sharding:
+    length: 5
+    timeout: 60
+    snapshot:
+      type: 0
+      timed:
+        interval: 10
+      block_height:
+        interval: 10
+      serialize_interval: 10
+      path: ../data/node5/tx_filter
+    birds_nest:
+      length: 10
+      rules:
+        absolute_expire_time: 172800
+      cuckoo:
+        key_type: 1
+        tags_per_bucket: 2
+        bits_per_item: 11
+        max_num_keys: 2000000
+        table_type: 0
+monitor:
+  enabled: false
+  port: 0
+pprof:
+  enabled: false
+  port: 0
+consensus:
+  raft:
+    snap_count: 10
+    async_wal_save: true
+    ticker: 1
+storage:
+  store_path: ../data/node5/ledgerData1
+  unarchive_block_height: 300000
+  disable_block_file_db: false
+  logdb_segment_async: false
+  logdb_segment_size: 128
+  enable_bigfilter: false
+  bigfilter_config:
+    redis_hosts_port: 127.0.0.1:6300,127.0.0.1:6301
+    redis_password: abcpass
+    tx_capacity: 1000000000
+    fp_rate: 1e-09
+  rolling_window_cache_capacity: 55000
+  write_block_type: 0
+  state_cache_config:
+    life_window: 3000000000000
+    clean_window: 1000000000
+    max_entry_size: 500
+    hard_max_cache_size: 1024
+  blockdb_config:
+    provider: leveldb
+    leveldb_config:
+      store_path: ../data/node5/block
+  statedb_config:
+    provider: leveldb
+    leveldb_config:
+      store_path: ../data/node5/state
+  historydb_config:
+    provider: leveldb
+    disable_key_history: false
+    disable_contract_history: true
+    disable_account_history: true
+    leveldb_config:
+      store_path: ../data/node5/history
+  resultdb_config:
+    provider: leveldb
+    leveldb_config:
+      store_path: ../data/node5/result
+  disable_contract_eventdb: true
+  contract_eventdb_config:
+    provider: sql
+    sqldb_config:
+      sqldb_type: mysql
+      dsn: root:password@tcp(127.0.0.1:3306)/
+scheduler:
+  rwset_log: false
+vm:
+  common:
+    max_send_msg_size: 100
+    max_recv_msg_size: 100
+    dial_timeout: 10
+    runtime_server:
+      port: 32351
+  go:
+    enable: true
+    data_mount_path: ../data/node5/go
+    log_mount_path: ../log/node5/go
+    protocol: tcp
+    log_in_console: false
+    log_level: INFO
+    max_concurrency: 20
+    contract_engine:
+      host: 127.0.0.1
+      port: 22351
+      max_connection: 5
+  java:
+    enable: true
+    data_mount_path: ../data/node5/java
+    log_mount_path: ../log/node5/java
+    log_in_console: false
+    log_level: INFO
+    max_concurrency: 20
+    contract_engine:
+      host: 127.0.0.1
+      port: 23351
+      max_connection: 5

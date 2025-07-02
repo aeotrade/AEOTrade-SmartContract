@@ -1,0 +1,49 @@
+chain_id: pk1
+version: v3.0.0
+sequence: 0
+auth_type: public
+crypto:
+  hash: SHA256
+contract:
+  enable_sql_support: false
+vm:
+  addr_type: 2
+  support_list:
+  - wasmer
+  - gasm
+  - evm
+  - dockergo
+  - wxvm
+  - dockerjava
+block:
+  tx_timestamp_verify: true
+  tx_timeout: 600
+  block_tx_capacity: 100
+  block_size: 50
+  block_interval: 10
+  block_timestamp_verify: false
+  block_timeout: 10
+  tx_parameter_size: 100
+core:
+  tx_scheduler_timeout: 10
+  tx_scheduler_validate_timeout: 10
+  enable_sender_group: false
+  enable_conflicts_bit_window: true
+snapshot: null
+scheduler: null
+consensus:
+  type: 1
+  nodes:
+  - org_id: public
+    node_id:
+    - QmUbBvoJ7LUmTsPCJvJtEnXjLyNtWPoQ8E3HcYdHT2zL5d
+    - QmSxtqgqYtZWsrcPyTvvkBG9MU3JDV8TuX9dVmRYmGn5nM
+    - QmbDQAugHgt2sDtQ8p4dmyCG7Vf2ocMsC9Av9pUAgQXrHF
+    - QmcD8tkDrdtKuJaKZpmNJonkHFE6b8uS6oDAjQv9hdx249
+  ext_config: []
+  dpos_config: []
+trust_roots:
+- org_id: public
+  root:
+  - ../config/node5/admin/admin8/admin8.pem
+resource_policies: []

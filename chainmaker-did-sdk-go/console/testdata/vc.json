@@ -1,0 +1,31 @@
+{
+    "@context": [
+        "https://www.w3.org/2018/credentials/v1",
+        "https://www.w3.org/2018/credentials/examples/v1"
+    ],
+    "id": "vc001",
+    "type": [
+        "Identity",
+        "VerifiableCredential"
+    ],
+    "credentialSubject": {
+        "age": "18",
+        "id": "did:cm:Hyi8uUrBPhsH2i1sd1zaZGYeQA9WdxGgiAu8YPgY8pxe",
+        "name": "xiaoming",
+        "sex": "男"
+    },
+    "issuer": "did:cm:AmGZacodAgjdnoEDpH9v2VToz1UMhi5FD6SkVL2fYUo3",
+    "issuanceDate": "2024-03-08T16:49:03+08:00",
+    "expirationDate": "2025-01-25T00:00:00+08:00",
+    "template": {
+        "id": "temp001",
+        "name": "模板1"
+    },
+    "proof": {
+        "type": "SM2-SM3",
+        "created": "2024-03-08T16:49:03+08:00",
+        "proofPurpose": "assertionMethod",
+        "verificationMethod": "did:cm:AmGZacodAgjdnoEDpH9v2VToz1UMhi5FD6SkVL2fYUo3#keys-0",
+        "proofValue": "MEYCIQCh7l5EJckKjZ+yMbOabCBzfnfU47EiHE4cY2HJSYWmOQIhANmGwmvHas1d/jGa20ain5s/s7yV37BfPRkKIljtvAWk"
+    }
+}
